@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_basic_buttons",
+  "info": {
+    "displayName": "button",
+    "icon": "seed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "add",
+        "area",
+        "bathroom",
+        "bbq",
+        "beach_access",
+        "bedroom",
+        "business",
+        "calendar_month",
+        "caret_down",
+        "caret_left",
+        "caret_right",
+        "caret_up",
+        "description",
+        "file",
+        "home",
+        "home_pin",
+        "house",
+        "menu",
+        "people",
+        "room_service",
+        "shopping_cart",
+        "whatsapp"
+      ]
+    },
+    "external_link": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "contained",
+        "outlined",
+        "sunshine",
+        "ocean",
+        "sand",
+        "black",
+        "white"
+      ]
+    }
+  }
+}

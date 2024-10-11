@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_basic_layouts",
+  "info": {
+    "displayName": "layout",
+    "icon": "expand",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "height_percentage": {
+      "type": "integer"
+    },
+    "background_color": {
+      "type": "enumeration",
+      "enum": [
+        "inherit",
+        "primary",
+        "sunshine",
+        "ocean",
+        "sand",
+        "black",
+        "white"
+      ],
+      "required": true,
+      "default": "white"
+    },
+    "content_vertical_position": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "middle",
+        "bottom"
+      ],
+      "default": "top",
+      "required": true
+    },
+    "content_horizontal_position": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "middle",
+        "end"
+      ],
+      "default": "start",
+      "required": true
+    }
+  }
+}

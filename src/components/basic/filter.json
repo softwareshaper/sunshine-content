@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_basic_filters",
+  "info": {
+    "displayName": "filter",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "category": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

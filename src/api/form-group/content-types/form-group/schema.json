@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "form_groups",
+  "info": {
+    "singularName": "form-group",
+    "pluralName": "form-groups",
+    "displayName": "Form group",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "forms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::form.form",
+      "inversedBy": "form_groups"
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "basic.input",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

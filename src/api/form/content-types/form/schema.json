@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forms",
+  "info": {
+    "singularName": "form",
+    "pluralName": "forms",
+    "displayName": "form",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "form_groups": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::form-group.form-group",
+      "mappedBy": "forms"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.button"
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "mappedBy": "forms"
+    },
+    "input_groups": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::input-group.input-group",
+      "mappedBy": "forms"
+    }
+  }
+}

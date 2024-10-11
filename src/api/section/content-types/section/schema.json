@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "singularName": "section",
+    "pluralName": "sections",
+    "displayName": "section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "isHero": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "text_align": {
+      "type": "enumeration",
+      "enum": [
+        "carousel_left",
+        "center",
+        "end",
+        "justify",
+        "start",
+        "two_columns"
+      ],
+      "default": "start",
+      "required": true
+    },
+    "illustrations": {
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.illustrations"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.button"
+    },
+    "layout": {
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.layout",
+      "required": true
+    },
+    "pages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::page.page",
+      "inversedBy": "sections"
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "sections"
+    },
+    "cards": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::card.card",
+      "mappedBy": "sections"
+    },
+    "filters": {
+      "type": "component",
+      "repeatable": true,
+      "component": "basic.filter"
+    },
+    "variant": {
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.variant",
+      "required": true
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::article.article",
+      "mappedBy": "sections"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

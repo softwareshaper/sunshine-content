@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_basic_inputs",
+  "info": {
+    "displayName": "input",
+    "icon": "write",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "integer",
+        "text",
+        "select",
+        "checkbox",
+        "radio",
+        "switch",
+        "date",
+        "daterange",
+        "datetime",
+        "time",
+        "per person and day",
+        "select per person and day"
+      ],
+      "required": true,
+      "default": "text"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ],
+      "required": true,
+      "default": "md"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "default": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    }
+  }
+}

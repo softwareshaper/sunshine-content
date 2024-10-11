@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "input_groups",
+  "info": {
+    "singularName": "input-group",
+    "pluralName": "input-groups",
+    "displayName": "Input group"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "forms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::form.form",
+      "inversedBy": "input_groups"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "inputs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "basic.input",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

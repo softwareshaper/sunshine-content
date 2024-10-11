@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_basic_variants",
+  "info": {
+    "displayName": "variant",
+    "icon": "chartBubble",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text_style": {
+      "type": "enumeration",
+      "enum": [
+        "inline",
+        "center",
+        "left",
+        "right"
+      ],
+      "required": true,
+      "default": "inline"
+    },
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl"
+      ],
+      "required": true,
+      "default": "md"
+    },
+    "effect": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "alternate",
+        "collapse",
+        "crop",
+        "inline",
+        "shrink"
+      ],
+      "default": "none",
+      "required": true
+    },
+    "background_color": {
+      "type": "enumeration",
+      "enum": [
+        "inherit",
+        "primary",
+        "sunshine",
+        "ocean",
+        "sand",
+        "black",
+        "white"
+      ],
+      "default": "inherit",
+      "required": true
+    }
+  }
+}
