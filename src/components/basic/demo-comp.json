@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_basic_demo_comps",
+  "info": {
+    "displayName": "demo_comp"
+  },
+  "options": {},
+  "attributes": {
+    "blabla": {
+      "type": "string"
+    }
+  }
+}

@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -71,7 +71,7 @@
       "target": "api::card.card",
       "mappedBy": "sections"
     },
-    "filters": {
+    "filter_list": {
       "type": "component",
       "repeatable": true,
       "component": "basic.filter"

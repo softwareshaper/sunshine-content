@@ -1,6 +1,6 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Struct, Schema } from '@strapi/strapi';
 
-export interface BasicVariant extends Schema.Component {
+export interface BasicVariant extends Struct.ComponentSchema {
   collectionName: 'components_basic_variants';
   info: {
     displayName: 'variant';
@@ -8,26 +8,28 @@ export interface BasicVariant extends Schema.Component {
     description: '';
   };
   attributes: {
-    text_style: Attribute.Enumeration<['inline', 'center', 'left', 'right']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'inline'>;
-    size: Attribute.Enumeration<['xs', 'sm', 'md', 'lg', 'xl']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'md'>;
-    effect: Attribute.Enumeration<
+    text_style: Schema.Attribute.Enumeration<
+      ['inline', 'center', 'left', 'right']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'inline'>;
+    size: Schema.Attribute.Enumeration<['xs', 'sm', 'md', 'lg', 'xl']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'md'>;
+    effect: Schema.Attribute.Enumeration<
       ['none', 'alternate', 'collapse', 'crop', 'inline', 'shrink']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'none'>;
-    background_color: Attribute.Enumeration<
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'none'>;
+    background_color: Schema.Attribute.Enumeration<
       ['inherit', 'primary', 'sunshine', 'ocean', 'sand', 'black', 'white']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'inherit'>;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'inherit'>;
   };
 }
 
-export interface BasicLayout extends Schema.Component {
+export interface BasicLayout extends Struct.ComponentSchema {
   collectionName: 'components_basic_layouts';
   info: {
     displayName: 'layout';
@@ -35,27 +37,29 @@ export interface BasicLayout extends Schema.Component {
     description: '';
   };
   attributes: {
-    background_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    height_percentage: Attribute.Integer;
-    background_color: Attribute.Enumeration<
+    background_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    height_percentage: Schema.Attribute.Integer;
+    background_color: Schema.Attribute.Enumeration<
       ['inherit', 'primary', 'sunshine', 'ocean', 'sand', 'black', 'white']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'white'>;
-    content_vertical_position: Attribute.Enumeration<
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'white'>;
+    content_vertical_position: Schema.Attribute.Enumeration<
       ['top', 'middle', 'bottom']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'top'>;
-    content_horizontal_position: Attribute.Enumeration<
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'top'>;
+    content_horizontal_position: Schema.Attribute.Enumeration<
       ['start', 'middle', 'end']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'start'>;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'start'>;
   };
 }
 
-export interface BasicInput extends Schema.Component {
+export interface BasicInput extends Struct.ComponentSchema {
   collectionName: 'components_basic_inputs';
   info: {
     displayName: 'input';
@@ -63,8 +67,8 @@ export interface BasicInput extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String & Attribute.Required;
-    type: Attribute.Enumeration<
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<
       [
         'integer',
         'text',
@@ -77,21 +81,21 @@ export interface BasicInput extends Schema.Component {
         'datetime',
         'time',
         'per person and day',
-        'select per person and day'
+        'select per person and day',
       ]
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'text'>;
-    size: Attribute.Enumeration<['xs', 'sm', 'md', 'lg', 'xl']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'md'>;
-    placeholder: Attribute.String;
-    default: Attribute.String;
-    description: Attribute.Blocks;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'text'>;
+    size: Schema.Attribute.Enumeration<['xs', 'sm', 'md', 'lg', 'xl']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'md'>;
+    placeholder: Schema.Attribute.String;
+    default: Schema.Attribute.String;
+    description: Schema.Attribute.Blocks;
   };
 }
 
-export interface BasicIllustrations extends Schema.Component {
+export interface BasicIllustrations extends Struct.ComponentSchema {
   collectionName: 'components_basic_illustrations';
   info: {
     displayName: 'illustrations';
@@ -99,16 +103,19 @@ export interface BasicIllustrations extends Schema.Component {
     description: '';
   };
   attributes: {
-    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
-    variant: Attribute.Enumeration<
+    variant: Schema.Attribute.Enumeration<
       ['canva', 'carousel', 'carousel_with_focus', 'hero', 'single']
     > &
-      Attribute.Required &
-      Attribute.DefaultTo<'single'>;
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'single'>;
+    medias: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
   };
 }
 
-export interface BasicFilter extends Schema.Component {
+export interface BasicFilter extends Struct.ComponentSchema {
   collectionName: 'components_basic_filters';
   info: {
     displayName: 'filter';
@@ -116,11 +123,21 @@ export interface BasicFilter extends Schema.Component {
     description: '';
   };
   attributes: {
-    category: Attribute.String;
+    category: Schema.Attribute.String;
   };
 }
 
-export interface BasicButton extends Schema.Component {
+export interface BasicDemoComp extends Struct.ComponentSchema {
+  collectionName: 'components_basic_demo_comps';
+  info: {
+    displayName: 'demo_comp';
+  };
+  attributes: {
+    blabla: Schema.Attribute.String;
+  };
+}
+
+export interface BasicButton extends Struct.ComponentSchema {
   collectionName: 'components_basic_buttons';
   info: {
     displayName: 'button';
@@ -128,8 +145,8 @@ export interface BasicButton extends Schema.Component {
     description: '';
   };
   attributes: {
-    label: Attribute.String;
-    icon: Attribute.Enumeration<
+    label: Schema.Attribute.String;
+    icon: Schema.Attribute.Enumeration<
       [
         'add',
         'area',
@@ -152,12 +169,12 @@ export interface BasicButton extends Schema.Component {
         'people',
         'room_service',
         'shopping_cart',
-        'whatsapp'
+        'whatsapp',
       ]
     >;
-    external_link: Attribute.String;
-    page: Attribute.Relation<'basic.button', 'oneToOne', 'api::page.page'>;
-    variant: Attribute.Enumeration<
+    external_link: Schema.Attribute.String;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+    variant: Schema.Attribute.Enumeration<
       [
         'text',
         'contained',
@@ -166,20 +183,21 @@ export interface BasicButton extends Schema.Component {
         'ocean',
         'sand',
         'black',
-        'white'
+        'white',
       ]
     >;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'basic.variant': BasicVariant;
       'basic.layout': BasicLayout;
       'basic.input': BasicInput;
       'basic.illustrations': BasicIllustrations;
       'basic.filter': BasicFilter;
+      'basic.demo-comp': BasicDemoComp;
       'basic.button': BasicButton;
     }
   }

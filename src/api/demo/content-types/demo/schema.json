@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demos",
+  "info": {
+    "singularName": "demo",
+    "pluralName": "demos",
+    "displayName": "demo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "demo_cmp": {
+      "displayName": "demo_comp",
+      "type": "component",
+      "repeatable": false,
+      "component": "basic.demo-comp"
+    }
+  }
+}

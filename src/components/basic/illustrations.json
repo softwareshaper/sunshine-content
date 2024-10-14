@@ -7,17 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "media": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "variant": {
       "type": "enumeration",
       "enum": [
@@ -29,6 +18,17 @@
       ],
       "default": "single",
       "required": true
+    },
+    "medias": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
